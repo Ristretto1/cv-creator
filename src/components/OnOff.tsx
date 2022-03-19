@@ -34,15 +34,18 @@ const OnOff: React.FC<OnOffPropsType> = (props) => {
         backgroundColor: props.switchOn ? 'green' : 'red'
     }
 
+    const onClickedHandler = () => {
+        props.setSwitchOn(true)
+    }
+    const offClickedHandler = () => {
+        props.setSwitchOn(false)
+    }
+
     return (
         <div>
-            <div style={onStyle} onClick={() => {
-                props.setSwitchOn(true)
-            }}>On
+            <div style={onStyle} onClick={onClickedHandler}>On
             </div>
-            <div style={offStyle} onClick={() => {
-                props.setSwitchOn(false)
-            }}>Off
+            <div style={offStyle} onClick={offClickedHandler}>Off
             </div>
             <div style={indicatorStyle}></div>
         </div>

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 export type RatingValueType = 1 | 2 | 3 | 4 | 5
 type RatingPropsType = {
-    ratingValue:  RatingValueType
+    ratingValue: RatingValueType
     setRatingValue: (value: RatingValueType) => void
 }
 
@@ -27,10 +27,13 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
+
+    const onClickStarHandler = () => {
+        props.setValue(props.value)
+    }
+
     return (
-        <span onClick={() => {
-            props.setValue(props.value)
-        }}>{props.selected ? <b>star</b> : 'star'}</span>
+        <span onClick={onClickStarHandler}>{props.selected ? <b>star</b> : 'star'}</span>
     )
 }
 
