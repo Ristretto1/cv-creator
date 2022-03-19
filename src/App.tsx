@@ -14,7 +14,11 @@ function App() {
         <div>
             <OnOff switchOn={switchOn} setSwitchOn={setSwitchOn}/>
             <Rating ratingValue={ratingValue} setRatingValue={setRatingValue}/>
-            <Accordion title={'Кря'}/>
+            <Accordion
+                title={'Кря'}
+                accordionCollapsed={accordionCollapsed}
+                setAccordionCollapsed={setAccordionCollapsed}
+            />
         </div>
     )
 }
