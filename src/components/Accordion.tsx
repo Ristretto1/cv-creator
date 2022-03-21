@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 type AccordionPropsType = {
     title: string
     accordionCollapsed: boolean
-    setAccordionCollapsed: (collapsed:boolean) => void
+    setAccordionCollapsed: (collapsed: boolean) => void
 }
 
 export const Accordion = (props: AccordionPropsType) => {
@@ -21,7 +21,7 @@ export const Accordion = (props: AccordionPropsType) => {
 
 
 const AccordionBody = () => {
-    return(
+    return (
         <ul>
             <li>1</li>
             <li>1</li>
