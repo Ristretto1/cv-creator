@@ -1,21 +1,24 @@
 import React from 'react';
 
 type ItemsType = {
-    title: string
-    value: string
+    title: any
+    value: any
 }
 
 type SelectPropsType = {
-    value: any
+    value?: any
     onChange: (value: any) => void
-    items: Array<ItemsType>
+    items: ItemsType[]
 }
 
 export const SelectDim = (props: SelectPropsType) => {
+
+    const selectedItem = props.items.find(i => i.value === props.value)
+
     return (
         <div>
-            <div>{}</div>
-            {props.items.map(i => <div>{i.title}</div>)}
+            <h3>{selectedItem && selectedItem.title}</h3>
+            {props.items.map(i => <div key={i.value}>{i.title}</div>)}
         </div>
     );
 };
