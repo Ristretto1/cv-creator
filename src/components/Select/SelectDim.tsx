@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import s from './SelectDim.module.css'
 
 type ItemsType = {
     title: any
@@ -14,11 +15,34 @@ type SelectPropsType = {
 export const SelectDim = (props: SelectPropsType) => {
 
     const selectedItem = props.items.find(i => i.value === props.value)
+    const [active, setActive] = useState(false)
+    const toggleItems = () => setActive(!active)
+    const onItemClick = (value: any) => {
+        props.onChange(value);
+        toggleItems();
+    }
 
     return (
-        <div>
-            <h3>{selectedItem && selectedItem.title}</h3>
-            {props.items.map(i => <div key={i.value}>{i.title}</div>)}
+        <div className={s.select}>
+            <span
+                onClick={toggleItems}
+                className={s.main}
+            >
+                {selectedItem && selectedItem.title}
+            </span>
+
+            {active &&
+            <div className={s.items}>
+                {props.items.map(i => (
+                    <div
+                        key={i.value}
+                        className={s.item + ' ' + (selectedItem === i ? s.selected : '')}
+                        onClick={
+                            () => onItemClick(i.value)}
+                    >{i.title}</div>
+                ))}
+            </div>
+            }
         </div>
     );
 };
