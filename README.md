@@ -1,46 +1,126 @@
-# Getting Started with Create React App
+# Webpack Static Site Starter Kit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Требования к проекту
 
-## Available Scripts
+- [Node 14.18.3](https://nodejs.org/download/release/v14.18.3/)
+- [NVM/MacOC](https://tecadmin.net/install-nvm-macos-with-homebrew/)
+- [NVM/Windows](https://github.com/coreybutler/nvm-windows/releases) Если Windows то установка только от имени администратора
+- [Yarn](https://yarnpkg.com/)
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+## Использование
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Клонировать репозиторий
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+git clone https://github.com/alex-karo/webpack-static-template block7
+```
 
-### `yarn test`
+В папке block7 перейти в папку проекта
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd block7
+```
 
-### `yarn build`
+Удалить папку .git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+rm -rf .git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Если создаете новый проект в github.com
 
-### `yarn eject`
+нужно будет инициализировать git проект, _если данная команда не сработает значит версия git установлена старая, нужно обновить её_
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```properties
+git init -b main
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+добавить все изменения и сделать первый коммит
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```properties
+git add . && git commit -m "initial commit"
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+соединить git удаленный с локальным, *USER* (пользователь) и *REPO* (репозиторий)
 
-## Learn More
+```properties
+git remote add origin https://github.com/USER/REPO.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+проверить на то что есть соединение
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```properties
+git remote -v
+```
+
+отправить изменения в удаленный репозиторий
+
+```properties
+git push origin main
+```
+
+---
+
+## Проверка версии ноды
+
+Должно вывести версию ноды 14.18.3
+
+```properties
+node -v
+```
+
+---
+
+## Два метода установки зависимостей
+
+Установка зависимостей через NPM
+
+```properties
+npm install
+```
+
+Установка зависимостей через Yarn
+
+```properties
+yarn
+```
+
+---
+
+## Два метода запуска приложения
+
+Для запуска веб-сервера через NPM
+
+```properties
+npm run start
+```
+
+Для запуска веб-сервера через Yarn
+
+```properties
+yarn start
+```
+
+---
+
+## Два метода загрузки на Github Pages
+
+### Ваш репозиторий должен быть связан с github.com репозиторием, после этого выполняем
+
+Загрузка на Github Pages через NPM
+
+```properties
+npm run deploy
+```
+
+Загрузка на Github Pages через Yarn
+
+```properties
+yarn deploy
+```
+
+Основано на [этой статье](https://hackernoon.com/lets-start-with-webpack-4-91a0f1dba02e)
