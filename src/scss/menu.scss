@@ -125,7 +125,6 @@
 
   &__phone {
     font-size: 24px;
-    line-height: 32px;
     letter-spacing: -0.6px;
     font-style: bold;
     font-weight: 700;
@@ -210,7 +209,7 @@
 
   &__container {
     position: sticky;
-    top: 32px;
+    top: 30px;
   }
 
   & button[type='button'] {
@@ -338,7 +337,7 @@
     }
 
     &__navigation-list {
-      gap: 32px;
+      gap: 16px;
     }
 
     &__navigation-list li::before {
@@ -346,7 +345,7 @@
     }
 
     &__phone {
-      margin-bottom: 40px;
+      margin-bottom: 33px;
     }
   }
 }
@@ -360,7 +359,7 @@
     }
 
     &__navigation-list {
-      gap: 32px;
+      gap: 16px;
     }
 
     &__navigation-list li::before {
@@ -368,7 +367,7 @@
     }
 
     &__phone {
-      margin-bottom: 40px;
+      margin-bottom: 33px;
     }
   }
 }
@@ -377,31 +376,32 @@
   .menu,
   .menu--closed {
     visibility: visible;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    position: sticky;
     z-index: 3;
     order: -3;
+    box-sizing: border-box;
     box-shadow: none;
-    height: auto;
+    max-height: 100vh;
     width: 320px;
     transition: none;
     transform: none;
-    padding-bottom: 0;
-    padding-top: 0;
+    padding-bottom: 15px;
+    padding-top: 30px;
 
     &__container-sticky {
-      position: sticky;
-      top: 32px;
+      position: static;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    &__contacts-list {
+      margin-bottom: 0;
     }
 
     .menu__heading {
-      margin-bottom: 37px;
-    }
-
-    &__navigation {
-      margin-bottom: 50px;
+      margin-bottom: 28px;
     }
 
     &__list > li {
@@ -411,7 +411,7 @@
     }
 
     &__navigation-list {
-      gap: 28px;
+      gap: 16px;
     }
 
     &__navigation-list li {
@@ -421,7 +421,7 @@
     }
 
     &__phone {
-      margin-bottom: 40px;
+      margin-bottom: 15px;
     }
   }
 
