@@ -5,69 +5,13 @@ type RatingPropsType = {
 }
 
 export const Rating: FC<RatingPropsType> = ({value}) => {
-    if (value === 1) {
-        return (
-            <div>
-                <Star completed={true}/>
-                <Star completed={false}/>
-                <Star completed={false}/>
-                <Star completed={false}/>
-                <Star completed={false}/>
-            </div>
-        );
-    }
-    if (value === 2) {
-        return (
-            <div>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={false}/>
-                <Star completed={false}/>
-                <Star completed={false}/>
-            </div>
-        );
-    }
-    if (value === 3) {
-        return (
-            <div>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={false}/>
-                <Star completed={false}/>
-            </div>
-        );
-    }
-    if (value === 4) {
-        return (
-            <div>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={false}/>
-            </div>
-        );
-    }
-    if (value === 5) {
-        return (
-            <div>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={true}/>
-                <Star completed={true}/>
-            </div>
-        );
-    }
-
     return (
         <div>
-            <Star completed={false}/>
-            <Star completed={false}/>
-            <Star completed={false}/>
-            <Star completed={false}/>
-            <Star completed={false}/>
+            <Star completed={value > 0}/>
+            <Star completed={value > 1}/>
+            <Star completed={value > 2}/>
+            <Star completed={value > 3}/>
+            <Star completed={value > 4}/>
         </div>
     );
 };
