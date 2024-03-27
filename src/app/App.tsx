@@ -10,7 +10,7 @@ import { FileType, getBase64 } from '../helper/helper';
 export const App = () => {
   const [imageUrl, setImageUrl] = useState<string>();
 
-  const onChangeFile: UploadProps['onChange'] = (info) => {
+  const handleChangeFile: UploadProps['onChange'] = (info) => {
     if (info.file.status === 'done') {
       getBase64(info.file.originFileObj as FileType, (url) => {
         setImageUrl(url);
@@ -18,7 +18,7 @@ export const App = () => {
     }
   };
 
-  const onChangeDate: DatePickerProps<Dayjs[]>['onChange'] = (date, dateString) => {
+  const handleChangeDate: DatePickerProps<Dayjs[]>['onChange'] = (date, dateString) => {
     console.log(date, dateString);
   };
 
@@ -51,7 +51,7 @@ export const App = () => {
             <StyledInputItem>
               <StyledLabel htmlFor="birthday">День рождения</StyledLabel>
               <DatePicker
-                onChange={onChangeDate}
+                onChange={handleChangeDate}
                 id="birthday"
                 name="birthday"
                 placeholder="День рождения"
@@ -64,7 +64,7 @@ export const App = () => {
                 listType="picture-card"
                 showUploadList={false}
                 action="POST"
-                onChange={onChangeFile}
+                onChange={handleChangeFile}
               >
                 {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
               </Upload>
